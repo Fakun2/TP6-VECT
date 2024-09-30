@@ -1,0 +1,32 @@
+//Generar un vector de orden N que cumpla con las siguientes condiciones:
+//a) El último elemento del vector valdrá N: V[N-1] = N.
+//b) El penúltimo elemento valdrá: V[N-2] = V[N-1] + 1.
+//c) El elemento V[N-3] valdrá: V[N-3] = V[N-1] + 2.
+//d) Se debe continuar la serie hasta completar el vector.
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    printf ("Ingrese el tamano del vector: ");
+    scanf("%d",&n);
+    
+    int vector[n];
+    vector[n-1] =n;
+    
+    for (int i=n -2; i>=0;
+    i--){
+        vector[i] = vector[i+1] + 1;
+    }
+    
+    printf("Vector generado:\n");
+    for (int i=0 ; i < n; i++){
+        printf("%d" , vector[i]);
+    }
+    
+    printf("\n");
+
+
+return 0;
+}
