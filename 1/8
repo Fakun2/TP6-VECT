@@ -1,0 +1,44 @@
+//Dado un vector V de orden N con V[i] = 0 para todo i, se desea hacer el siguiente trabajo:
+//a) Se introduce un número natural x.
+//b) Si x está comprendido entre 0 y N-1 y V[x] = 0, ingresar un valor y hacer V[x] = z. Si x no está entre 0 y N-1 o V[x] <> 0, volver a ingresar otro valor de x.
+//c) Repetir el proceso hasta que se haya cargado todo el vector. 
+
+
+//CORREGIR: VECTOR DA = 0000
+
+#include <stdio.h>
+int main() {
+    int n, x, z;
+    
+    printf("Ingrese el tamano del vector: ");
+    scanf("%d" , &n);
+    
+    int vector[n];
+    for (int i=0;i<n;i++){
+        vector[i]=0;
+    }
+    
+    int count=0 ;
+    while (count < n) {
+        printf("Ingrese un valor para x (entre 0 y %d): ", n-1);
+        scanf("%d" , &x);
+        
+        if (x>=0 && x<n && vector[x] == 0) {
+            printf("Ingrese el valor para z: ");
+            scanf("%d" , &z);
+            count++;
+        } else{
+            printf("Eror: posicion ya ocupada o fuera de rango.\n");
+        }
+    }
+    
+    printf("Vector final:\n");
+    for(int i=0;i<n;i++){
+        printf("%d",vector[i]);
+    }
+    
+    printf("\n");
+    
+
+    return 0;
+}
