@@ -1,0 +1,31 @@
+//Leer un vector M. Acumular elementos negativos en variable int N y positivos en variable P.
+
+#include <stdio.h>
+
+int main() {
+    int m, n =0, p=0 ;
+    
+    printf("Ingrese el tamano del vector: ");
+    scanf("%d", &m);
+    
+    int vector[m] ;
+    printf("Ingrese los elementos del vector:\n");
+    for (int i=0;i<m;i++) {
+        scanf("%d", &vector[i]);
+    }
+    
+    for (int i=0; i<m; i++) {
+      if(vector[i] < 0) {
+          n += vector[i];
+      }
+  else if (vector[i]>0) {
+      p += vector[i];
+  }
+  }
+  
+  printf("La suma de negativos es: %d\n", n);
+  printf("La suma de positivos es: %d\n", p);
+  
+ 
+    return 0;
+}
