@@ -1,0 +1,38 @@
+//Dado un vector de N elementos, se desea invertir sus elementos y mostrar el vector dado y el invertido.
+//Ejemplo: Vector dado: V = (2 , 4 , 7 , 9 , 5 , 6)
+//Vector invertido: V = (6 , 5 , 9 , 7 , 4 , 2)
+//No usar arreglo auxiliar
+
+#include <stdio.h>
+int main() {
+    int n;
+    
+    printf("Ingrese el tamano del vector: ");
+    scanf("%d", &n);
+    
+    int vector[n];
+    printf("Ingrese los elementos del vector:\n");
+    for (int i=0; i<n ; i++) {
+        scanf("%d", &vector[i]);
+    }
+    
+    printf("Vector original:\n");
+    for(int i=0; i<n ;i++){
+        printf("%d ", vector[i]);
+    }
+    printf("\n");
+  
+  for(int i=0;i<n/2;i++){
+      int temp=vector[i];
+      vector[i]=vector[n-1-i];
+      vector[n-1-i]=temp;
+  }
+  
+  printf("Vector invertido:\n");
+  for(int i=0 ; i<n ;i++){
+      printf("%d ", vector[i]);
+  }
+  printf("\n");
+ 
+    return 0;
+}
