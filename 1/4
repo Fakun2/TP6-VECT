@@ -1,0 +1,29 @@
+//Cargar un vector X de N elementos y un valor entero C, calcule el valor NUMERO que se forma: 
+//NUMERO = (X[0]-C) * (X[1]-C) * (X[2]-C) * ... * (X[N-1]-C)
+
+#include <stdio.h>
+
+int main() {
+    int n, c, numero = 1 ;
+    
+    printf("Ingrese el tamano del vector: ");
+    scanf("%d" , &n);
+    
+    int vector[n];
+    printf("Ingrese los elementos del vector:\n");
+    for(int i = 0; i<n; i++) {
+        scanf("%d" , &vector[i]) ;
+    }
+    
+    printf("Ingrese el valor de C: ");
+    scanf("%d", &c);
+    
+    for (int i=0; i<n; i++){
+        numero *= (vector[i] - c);
+    }
+    
+    printf("El valor de numero es de: %d\n", numero);
+    
+    return 0;
+}
+
