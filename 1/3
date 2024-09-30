@@ -1,0 +1,32 @@
+//Encontrar el mayor valor y su posicion en el vector
+
+#include <stdio.h>
+
+int main() {
+    int n, mayor, posicion;
+    
+    printf("Ingrese el tamano del vector: ");
+    scanf("%d" , &n);
+    
+    int vector[n];
+    printf("Ingrese los elementos del vector:\n");
+    for (int i=0 ; i<n ; i++) {
+        scanf("%d" , &vector[i]) ; 
+    }
+    
+    mayor = vector [0] ;
+    posicion = 0 ;
+    
+    for (int i=1; i<n ; i++){
+        if (vector [i]> mayor){
+            mayor = vector[i];
+            posicion = i;
+            
+        }
+    }
+    
+    printf("El elemento mayor es %d y esta en la posicion %d.\n" , mayor, posicion) ;
+    
+    return 0;
+}
+//corregir posiciones del resultado del vector
