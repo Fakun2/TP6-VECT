@@ -1,0 +1,52 @@
+//A partir de un vector de orden par, generar 2 sub-vectores del mismo orden, distribuidos los elementos de la siguiente manera:
+//a) Los elementos que se encuentran en posición par serán ingresados al primer sub-vector.
+//b) Los elementos que se encuentran en posición impar serán ingresados en segundo sub-vector
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    printf("Ingrese el tamano del vector (recuerde que el numero debe ser par): ");
+    scanf("%d", &n);
+    
+    if(n%2!=0){
+        printf("Error: el tamano del vector debe ser par.\n");
+        return 1;
+    }
+    
+    int V[n];
+    printf("Ingrese los elementos del vector V:\n");
+    for (int i=0; i<n;i++){
+        scanf("%d", &V[i]);
+    }
+    
+    int subVectorPar[n/2], subVectorImpar[n/2];
+    
+    
+    for(int i=0;i<n;i++) {
+        if(i%2==0){
+            subVectorPar[i/2]=V[i];
+        }
+        else{
+            subVectorImpar[i/2]=V[i];
+        }
+    }
+    
+    printf("Sub-vector par: ");
+    for(int i=0; i< n/2; i++) {
+        printf("%d ", subVectorPar[i]);
+    }
+    
+    printf("\n");
+    
+    printf("Sub-vector impar: ");
+    for(int i=0;i<n/2;i++){
+        printf("%d ", subVectorImpar[i]);
+    }
+    
+    printf("\n");
+
+
+    return 0;
+}
