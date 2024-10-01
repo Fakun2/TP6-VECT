@@ -1,0 +1,49 @@
+//Dado un vector V de N elementos, generar un vector W cuyos elementos serán las posiciones de los elementos de V que son iguales a 0. Mostrar ambos vectores.
+//Ejemplo: Vector dado V = (6 , 0 , 0 , 2 , 5 , 0 , 3 , 0 , 6 , 0 , 0 , 2)
+//Vector generado W = (2 , 3 , 6 , 8 , 10 , 11)
+
+//CORREGIR VECTOR W= NO DA VALOR
+
+#include <stdio.h>
+int main() {
+    int n, count = 0;
+    
+    printf("Ingrese el tamano del vector: ");
+    scanf("%d", &n);
+    
+    int V[n];
+    printf("Ingrese los elementos del vector V:\n");
+        for(int i=0; i<n; i++){
+            scanf("%d", &V[i]);
+        }
+    
+    for(int i=0; i<n; i++){
+        if (V[i]==0){
+            count++;
+        }
+    }
+    
+    int W[count], j=0;
+    
+    for(int i=0; i<n; i++){
+         if (V[i]==0){
+             W[j]=i+1;
+             j++;
+         }
+    }
+    
+    printf("Vector V: ");
+    for(int i=0; i<n; i++) {
+        printf("%d", V[i]);
+    }
+    
+    printf("\nVector W (posiciones de ceros): ");
+    for(int i=0; i<count; i++){
+        printf("%d", W[i]);
+    }
+    
+    printf("\n");
+  
+ 
+    return 0;
+}
